@@ -113,34 +113,65 @@ USE_TZ = True
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+
 if DEBUG == True:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': BASE_DIR / 'db.sqlite3',
-        }
-    }
     
     STATIC_URL = 'static/'
     MEDIA_URL='media/'
+
+    DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+    }
+    
     STATICFILES_DIRS=[
         os.path.join(BASE_DIR,'static'),
         os.path.join(BASE_DIR,'media')
     ]
+    STATIC_ROOT=os.path.join(BASE_DIR,'static_cdn')
+    
+    MEDIA_ROOT=os.path.join(BASE_DIR,'media_cdn')
+
     INTERNAL_IPS = [
         "127.0.0.1",
     ]
-
-
+    
 else:
-    pass
+    #ALLOWED_HOSTS = [''] update allowed hosts for production
+    DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'neondb',
+        'USER': 'foreverinc',
+        'PASSWORD': os.environ.get('DB_PASSWORD'),
+        'HOST': "ep-blue-violet-792186.us-east-2.aws.neon.tech",
+        'PORT': '5432',
+    }
+    }
+
+    # CLOUDINARY_STORAGE={
+    #     'CLOUD_NAME': 'dnb8rethz',
+    #     'API_KEY': os.environ.get('API_KEY'),
+    #     'API_SECRET': os.environ.get('API_SECRET')
+    # }
+    
+    # DEFAULT_FILE_STORAGE='cloudinary_storage.storage.MediaCloudinaryStorage'
+
+
+    
+    STATIC_URL=''
+    
+    
+    
 
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'theronalliance.dev@gmail.com'
-EMAIL_HOST_PASSWORD = 'gksznagmjpkzikfg'
+EMAIL_HOST_USER = os.environ.get('EMAIL')
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASSWORD')
 EMAIL_USE_TLS = True
 
 MESSAGE_TAGS = {
