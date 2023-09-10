@@ -7,7 +7,9 @@ django-cloudinary-storage
 django-debug-toolbar
 django-dotenv
 django-htmx
+django-phonenumber-field
 idna
+phonenumberslite
 Pillow
 psycopg2
 requests

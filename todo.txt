@@ -1,2 +1,0 @@
-add forms.py to main
-add messages code
