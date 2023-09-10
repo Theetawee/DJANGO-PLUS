@@ -6,3 +6,4 @@ psycopg2
 sqlparse
 tzdata
 gunicorn
+django-htmx
