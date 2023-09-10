@@ -5,14 +5,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block head %}{% endblock %}
     {% include 'base/pwa.html' %}
     {% include 'base/seo.html' %}
     {% include 'base/fonts.html' %}
     <link rel="stylesheet" href="{% static 'css/output.css' %}">
-    <title>{% block title%} Redo polls{% endblock %}</title>
 </head>
 <body>
+    <header>
    {% include 'base/nav.html' %}
+   </header>
    {% include 'base/messages.html' %}
    <main>
     {% block content %}
