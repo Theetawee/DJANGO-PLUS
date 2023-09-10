@@ -1146,6 +1146,10 @@ input:checked + .toggle-bg{
   height:1.5rem
 }
 
+.h-5{
+  height:1.25rem
+}
+
 .w-1\/2{
   width:50%
 }
@@ -1156,6 +1160,10 @@ input:checked + .toggle-bg{
 
 .w-64{
   width:16rem
+}
+
+.w-5{
+  width:1.25rem
 }
 
 .flex-1{
@@ -1559,6 +1567,12 @@ input:checked + .toggle-bg{
   box-shadow:var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)
 }
 
+.focus\:ring-1:focus{
+  --tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow:var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)
+}
+
 .focus\:ring-blue-300:focus{
   --tw-ring-opacity:1;
   --tw-ring-color:rgb(164 202 254 / var(--tw-ring-opacity))
@@ -1612,6 +1626,11 @@ input:checked + .toggle-bg{
   background-color:rgb(31 41 55 / 0.5)
 }
 
+:is(.dark .dark\:bg-black){
+  --tw-bg-opacity:1;
+  background-color:rgb(0 0 0 / var(--tw-bg-opacity))
+}
+
 :is(.dark .dark\:bg-opacity-80){
   --tw-bg-opacity:0.8
 }
@@ -1646,6 +1665,11 @@ input:checked + .toggle-bg{
   background-color:rgb(31 41 55 / var(--tw-bg-opacity))
 }
 
+:is(.dark .dark\:hover\:bg-gray-700:hover){
+  --tw-bg-opacity:1;
+  background-color:rgb(55 65 81 / var(--tw-bg-opacity))
+}
+
 :is(.dark .dark\:hover\:text-blue-500:hover){
   --tw-text-opacity:1;
   color:rgb(63 131 248 / var(--tw-text-opacity))
@@ -1659,4 +1683,9 @@ input:checked + .toggle-bg{
 :is(.dark .dark\:hover\:text-white:hover){
   --tw-text-opacity:1;
   color:rgb(255 255 255 / var(--tw-text-opacity))
+}
+
+:is(.dark .dark\:focus\:ring-gray-700:focus){
+  --tw-ring-opacity:1;
+  --tw-ring-color:rgb(55 65 81 / var(--tw-ring-opacity))
 }
