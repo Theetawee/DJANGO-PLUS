@@ -20,3 +20,6 @@ handler400 = 'main.views.custom_404_view'
 handler500 = 'main.views.custom_500_view'
 handler403 = 'main.views.custom_404_view'
 
+admin.site.site_header='App name'
+admin.site.site_title='App Admin'
+admin.site.index_title='Welcome to the Admin Panel'
