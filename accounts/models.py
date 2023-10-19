@@ -3,7 +3,7 @@ from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, Permis
 from phonenumber_field.modelfields import PhoneNumberField
 from django.utils import timezone
 from django.conf import settings
-
+import os
 
 
 
@@ -67,7 +67,10 @@ class Account(AbstractBaseUser, PermissionsMixin):
 
     @property
     def image(self):
-        return self.profile_image
+        if self.profile_image:
+            return self.profile_image.url
+        else:
+            return os.path.join(settings.STATIC_URL,'images','default.webp')
 
     def has_perm(self, perm, obj=None):
         return self.is_staff
