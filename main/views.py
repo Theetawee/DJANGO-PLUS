@@ -6,15 +6,7 @@ from pathlib import Path
 from django.views.generic import View
 
 
-class RobotsTxtView(View):
-    def get(self, request):
-        template = loader.get_template("base/robots.txt")
-        content = template.render()
-        return HttpResponse(content, content_type="text/plain; charset=utf-8")
 
-
-def sitemap(request):
-    return render(request, "base/sitemap.xml")
 
 
 def custom_404_view(request, exception):

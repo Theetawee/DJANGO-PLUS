@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, PermissionsMixin
+from django.urls import reverse
 from phonenumber_field.modelfields import PhoneNumberField
 from django.conf import settings
 import os
@@ -75,3 +76,7 @@ class Account(AbstractBaseUser, PermissionsMixin):
 
     def has_module_perms(self, app_label):
         return True
+
+    # def get_absolute_url(self):
+    #     return reverse('profile', args=[str(self.username)])
+    
