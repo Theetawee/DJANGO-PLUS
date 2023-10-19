@@ -7,7 +7,8 @@
 
 {% block content %}
 
-
+<a href="{% url 'signup' %}">signup</a>
+<a href="{% url 'logout' %}">logout</a>
 <h1 class="text-red-600">Welcome</h1>
 {% include 'base/modeBtn.html' %}
 {% endblock %}
