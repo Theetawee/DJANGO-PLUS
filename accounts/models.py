@@ -69,8 +69,7 @@ class Account(AbstractBaseUser, PermissionsMixin):
     def image(self):
         if self.profile_image:
             return self.profile_image.url
-        else:
-            return os.path.join(settings.STATIC_URL,'images','default.webp')
+        return os.path.join(settings.STATIC_URL, 'images', 'default.webp')
 
     def has_perm(self, perm, obj=None):
         return self.is_staff
