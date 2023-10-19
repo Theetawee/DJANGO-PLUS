@@ -4,6 +4,11 @@ from phonenumber_field.modelfields import PhoneNumberField
 from django.utils import timezone
 from django.conf import settings
 
+
+
+
+
+
 class AccountManager(BaseUserManager):
     def create_user(self, email, username, name, password=None, **extra_fields):
         if not email:
@@ -29,6 +34,11 @@ class AccountManager(BaseUserManager):
             raise ValueError('Superuser must have is_superuser=True.')
 
         return self.create_user(email, username, name, password, **extra_fields)
+
+
+
+
+
 
 class Account(AbstractBaseUser, PermissionsMixin):
     name = models.CharField(max_length=255)
