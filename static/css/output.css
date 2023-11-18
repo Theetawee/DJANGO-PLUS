@@ -1,5 +1,5 @@
 *{
-  font-family: 'Titillium Web', sans-serif;
+  font-family: 'Rubik', sans-serif;
 }
 
 /*
@@ -1429,6 +1429,10 @@ input:checked + .toggle-bg{
   text-transform: uppercase;
 }
 
+.italic{
+  font-style: italic;
+}
+
 .leading-6{
   line-height: 1.5rem;
 }
@@ -1606,11 +1610,6 @@ input:checked + .toggle-bg{
   border-color: transparent;
 }
 
-:is(.dark .dark\:bg-black){
-  --tw-bg-opacity: 1;
-  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
-}
-
 :is(.dark .dark\:bg-blue-600){
   --tw-bg-opacity: 1;
   background-color: rgb(28 100 242 / var(--tw-bg-opacity));
@@ -1633,6 +1632,11 @@ input:checked + .toggle-bg{
 
 :is(.dark .dark\:bg-gray-800\/50){
   background-color: rgb(31 41 55 / 0.5);
+}
+
+:is(.dark .dark\:bg-gray-900){
+  --tw-bg-opacity: 1;
+  background-color: rgb(17 24 39 / var(--tw-bg-opacity));
 }
 
 :is(.dark .dark\:bg-opacity-80){
