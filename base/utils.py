@@ -30,4 +30,4 @@ def manifest(request):
 
 
 def offline(request):
-    return render(request, "main/offline.html")
+    return render(request, "base/offline.html")
