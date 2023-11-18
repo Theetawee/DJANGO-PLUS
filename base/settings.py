@@ -167,3 +167,9 @@ EMAIL_USE_TLS = True
 MESSAGE_TAGS = {
     messages.ERROR: "danger",
 }
+
+
+if DEBUG:
+    BACKUP_DIRECTORY = os.path.join(BASE_DIR, "backups/development")
+else:
+    BACKUP_DIRECTORY = os.path.join(BASE_DIR, "backups/production")
