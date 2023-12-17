@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     "accounts",
     "cloudinary_storage",
     "cloudinary",
+    "maintenance_mode",
 ]
 
 MIDDLEWARE = [
@@ -50,6 +51,7 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "debug_toolbar.middleware.DebugToolbarMiddleware",
     "django_htmx.middleware.HtmxMiddleware",
+    "maintenance_mode.middleware.MaintenanceModeMiddleware",
 ]
 
 ROOT_URLCONF = "base.urls"
@@ -154,7 +156,7 @@ else:
 
     DEFAULT_FILE_STORAGE = "cloudinary_storage.storage.MediaCloudinaryStorage"
 
-    STATIC_URL = ""
+    STATIC_URL = os.environ.get("STATIC_URL")
 
 
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
@@ -173,3 +175,7 @@ if DEBUG:
     BACKUP_DIRECTORY = os.path.join(BASE_DIR, "backups/development")
 else:
     BACKUP_DIRECTORY = os.path.join(BASE_DIR, "backups/production")
+
+
+MAINTENANCE_MODE = os.environ.get("MAINTENANCE_MODE", "False").lower() == "true"
+MAINTENANCE_MODE_TEMPLATE = "base/maintenance.html"
