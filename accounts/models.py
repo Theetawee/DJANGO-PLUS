@@ -1,6 +1,5 @@
 from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, PermissionsMixin
-from django.urls import reverse
 from phonenumber_field.modelfields import PhoneNumberField
 from django.conf import settings
 import os
