@@ -10,12 +10,11 @@ SECRET_KEY = get_random_secret_key()
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
 
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
-DEBUG = os.environ.get("DEBUG", "False").lower() == "true"
 
 ALLOWED_HOSTS = ["*"]
 
@@ -74,14 +73,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "base.wsgi.application"
 
-
-# Database
-# https://docs.djangoproject.com/en/4.2/ref/settings/#databases
-
-
-# Password validation
-# https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
-
 AUTH_PASSWORD_VALIDATORS = [
     {
         "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",
@@ -112,53 +103,6 @@ USE_TZ = True
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 
-if DEBUG == True:
-    STATIC_URL = "static/"
-    MEDIA_URL = "media/"
-
-    DATABASES = {
-        "default": {
-            "ENGINE": "django.db.backends.sqlite3",
-            "NAME": BASE_DIR / "db.sqlite3",
-        }
-    }
-
-    STATICFILES_DIRS = [
-        os.path.join(BASE_DIR, "static"),
-        os.path.join(BASE_DIR, "media"),
-    ]
-    STATIC_ROOT = os.path.join(BASE_DIR, "static_cdn")
-
-    MEDIA_ROOT = os.path.join(BASE_DIR, "media_cdn")
-
-    INTERNAL_IPS = [
-        "127.0.0.1",
-    ]
-
-else:
-    # ALLOWED_HOSTS = [''] update allowed hosts for production
-    DATABASES = {
-        "default": {
-            "ENGINE": "django.db.backends.postgresql",
-            "NAME": "neondb",
-            "USER": "foreverinc",
-            "PASSWORD": os.environ.get("DB_PASSWORD"),
-            "HOST": "ep-blue-violet-792186.us-east-2.aws.neon.tech",
-            "PORT": "5432",
-        }
-    }
-
-    CLOUDINARY_STORAGE = {
-        "CLOUD_NAME": "dnb8rethz",
-        "API_KEY": "123456789",
-        "API_SECRET": os.environ.get("API_SECRET"),
-    }
-
-    DEFAULT_FILE_STORAGE = "cloudinary_storage.storage.MediaCloudinaryStorage"
-
-    STATIC_URL = os.environ.get("STATIC_URL")
-
-
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 EMAIL_HOST = "smtp.gmail.com"
 EMAIL_PORT = 587
@@ -169,12 +113,6 @@ EMAIL_USE_TLS = True
 MESSAGE_TAGS = {
     messages.ERROR: "danger",
 }
-
-
-if DEBUG:
-    BACKUP_DIRECTORY = os.path.join(BASE_DIR, "backups/development")
-else:
-    BACKUP_DIRECTORY = os.path.join(BASE_DIR, "backups/production")
 
 
 MAINTENANCE_MODE = os.environ.get("MAINTENANCE_MODE", "False").lower() == "true"
