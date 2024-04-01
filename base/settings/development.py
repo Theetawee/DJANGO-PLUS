@@ -3,6 +3,8 @@ from base.settings.base import *
 
 DEBUG = True
 
+ALLOWED_HOSTS = ["*"]
+
 
 STATIC_URL = "static/"
 MEDIA_URL = "media/"

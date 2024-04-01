@@ -2,6 +2,8 @@ from base.settings.base import *
 
 DEBUG = False
 
+ALLOWED_HOSTS = [""]
+
 
 DATABASES = {
     "default": {
