@@ -1,6 +1,3 @@
-asgiref
-certifi
-charset-normalizer
 cloudinary
 Django
 django-cloudinary-storage
@@ -8,17 +5,8 @@ django-debug-toolbar
 django-dotenv
 django-htmx
 django-maintenance-mode
-django-phonenumber-field
-idna
-phonenumberslite
 Pillow
 psycopg
 psycopg-binary
 psycopg-pool
-python-fsutil
-requests
-six
-sqlparse
-typing_extensions
-tzdata
-urllib3
+django-cotton

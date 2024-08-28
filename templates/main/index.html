@@ -1,16 +1,3 @@
-{% extends 'base/base.html' %}
-{% load redotags %}
-{% block head %}
-
-<title>Welcome.</title>
-
-{% endblock %}
-
-
-{% block content %}
-
-<a href="{% url 'signup' %}">signup</a>
-<a href="{% url 'logout' %}">logout</a>
-<h1 class="text-red-600">Welcome</h1>
-{% include 'base/modeBtn.html' %}
-{% endblock %}
+<c-base.layout>
+    <h1>Welcome</h1>
+</c-base.layout>

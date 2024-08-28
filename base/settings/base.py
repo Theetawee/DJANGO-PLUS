@@ -1,6 +1,5 @@
-from pathlib import Path
 import os
-from django.contrib.messages import constants as messages
+from pathlib import Path
 
 """
 from django.core.management.utils import get_random_secret_key
@@ -36,6 +35,7 @@ INSTALLED_APPS = [
     "cloudinary_storage",
     "cloudinary",
     "maintenance_mode",
+    "django_cotton",
 ]
 
 MIDDLEWARE = [
@@ -57,14 +57,25 @@ TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
         "DIRS": [os.path.join(BASE_DIR, "templates")],
-        "APP_DIRS": True,
+        "APP_DIRS": False,
         "OPTIONS": {
+            "loaders": [
+                (
+                    "django.template.loaders.cached.Loader",
+                    [
+                        "django_cotton.cotton_loader.Loader",
+                        "django.template.loaders.filesystem.Loader",
+                        "django.template.loaders.app_directories.Loader",
+                    ],
+                )
+            ],
             "context_processors": [
                 "django.template.context_processors.debug",
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
             ],
+            "builtins": ["django_cotton.templatetags.cotton"],
         },
     },
 ]
@@ -108,10 +119,8 @@ EMAIL_HOST_USER = "redodevs@gmail.com"
 EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_PASSWORD")
 EMAIL_USE_TLS = True
 
-MESSAGE_TAGS = {
-    messages.ERROR: "danger",
-}
-
-
 MAINTENANCE_MODE = os.environ.get("MAINTENANCE_MODE", "False").lower() == "true"
 MAINTENANCE_MODE_TEMPLATE = "base/maintenance.html"
+
+
+COTTON_DIR = "components"

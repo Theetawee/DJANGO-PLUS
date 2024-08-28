@@ -3,7 +3,7 @@
     "tailwindcss": "^3.3.3"
   },
   "scripts": {
-    "dev": "npx tailwindcss -i ./static/css/input.css -o ./static/css/output.css --watch"
+    "dev": "npx tailwindcss -i ./static/styles/input.css -o ./static/styles/style.css --minify --watch"
   },
   "dependencies": {
     "flowbite": "^1.7.0"
