@@ -1,6 +1,6 @@
-# DjangoPlus Boilerplate
+# DjangoPlus
 
-**DjangoPlus Boilerplate** is a robust, production-ready starter template for Django projects. It comes pre-configured with essential utilities, configurations, and features aimed at accelerating the development process. Whether you're working on a small web application or a large-scale platform, DjangoPlus streamlines your workflow from development to deployment.
+**DjangoPlus** is a robust, production-ready starter template for Django projects. It comes pre-configured with essential utilities, configurations, and features aimed at accelerating the development process. Whether you're working on a small web application or a large-scale platform, DjangoPlus streamlines your workflow from development to deployment.
 
 ## Key Features
 
@@ -17,7 +17,7 @@
 
 ## About the Creator
 
-**DjangoPlus Boilerplate** was crafted by **Pattawee Drake Khaotungkulmethee**, a skilled software engineer at **Waanverse Labs**, specializing in developing scalable web solutions. DjangoPlus reflects his commitment to reducing boilerplate setup time and enhancing development efficiency. Pattawee brings expertise in web architecture, cloud services, and deployment to make DjangoPlus an ideal foundation for both new and experienced developers.
+**DjangoPlus** was crafted by **Pattawee Drake Khaotungkulmethee**, a skilled software engineer at **Waanverse Labs**, specializing in developing scalable web solutions. DjangoPlus reflects his commitment to reducing boilerplate setup time and enhancing development efficiency. Pattawee brings expertise in web architecture, cloud services, and deployment to make DjangoPlus an ideal foundation for both new and experienced developers.
 
 Feel free to connect for collaborations or discussions:
 
@@ -27,12 +27,12 @@ Feel free to connect for collaborations or discussions:
 
 ## Getting Started
 
-To start using **DjangoPlus Boilerplate**, clone the repository and follow the setup steps:
+To start using **DjangoPlus**, clone the repository and follow the setup steps:
 
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/djangoplus-boilerplate.git
+git clone https://github.com/Theetawee/DJANGO-PLUS.git
 cd djangoplus-boilerplate
 ```
 
