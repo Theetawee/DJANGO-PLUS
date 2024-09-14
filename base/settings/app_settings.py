@@ -1,4 +1,12 @@
 import os
 
-ADMIN_ENABLED=os.environ.get("ADMIN_ENABLED", False),
-# allows access to the admin site if ADMIN_ENABLED is set to True
+# Determines whether the admin site is enabled
+IS_ADMIN_ENABLED = os.environ.get("IS_ADMIN_ENABLED", "False").lower() == "true"
+
+# Defines the URL path for the admin site if it is enabled
+ADMIN_SITE_URL_PATH = os.environ.get("ADMIN_SITE_URL_PATH", "admin")
+
+
+IS_PWA_ENABLED = os.environ.get("IS_PWA_ENABLED", "False").lower() == "true"
+
+APP_NAME = "Platform"

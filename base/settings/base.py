@@ -1,7 +1,12 @@
 import os
 from pathlib import Path
 
+from django.utils.translation import gettext_lazy as _
+
 from base.settings.app_settings import *
+
+# flake8: noqa
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
@@ -34,6 +39,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
+    "django.middleware.locale.LocaleMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -70,6 +76,8 @@ TEMPLATES = [
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
+                "django.template.context_processors.i18n",
+                "base.context_processors.is_pwa_enabled",
             ],
             "builtins": ["django_cotton.templatetags.cotton"],
         },
@@ -97,7 +105,10 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
+
 LANGUAGE_CODE = "en-us"
+
+LANGUAGES = [("en-us", _("English (US)"))]
 
 TIME_ZONE = "Africa/Nairobi"
 
@@ -119,4 +130,8 @@ MAINTENANCE_MODE = os.environ.get("MAINTENANCE_MODE", "False").lower() == "true"
 MAINTENANCE_MODE_TEMPLATE = "base/maintenance.html"
 
 
+COTTON_DIR = "components"
+COTTON_DIR = "components"
+COTTON_DIR = "components"
+COTTON_DIR = "components"
 COTTON_DIR = "components"

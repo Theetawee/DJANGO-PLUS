@@ -3,7 +3,6 @@ import re
 
 from django.conf import settings
 from django.http import Http404
-from django.urls import reverse
 
 
 class AdminAccessMiddleware:
@@ -11,9 +10,9 @@ class AdminAccessMiddleware:
         self.get_response = get_response
 
     def __call__(self, request):
-        # Check if ADMIN_ENABLED is set to False
-        if not settings.ADMIN_ENABLED:
-            admin_url = reverse("admin:index")
+        if not settings.IS_ADMIN_ENABLED:
+            admin_url = settings.ADMIN_SITE_URL_PATH
+            print(admin_url)
 
             # Check if the current URL matches the admin URL
             if request.path.startswith(admin_url):

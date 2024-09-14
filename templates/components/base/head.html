@@ -1,0 +1,25 @@
+{% load static %}
+
+<!-- meta tags -->
+<meta name="theme-color" content="#ffffff" />
+
+<!-- preload  -->
+<link rel="dns-prefetch" href="{% static '' %}" />
+<link rel="preload" href="{% static '' %}" />
+
+<!-- icons & favicon -->
+<link rel="shortcut icon" href="{% static 'icons/favicon.ico' %}" type="image/x-icon" />
+<link rel="shortcut icon" href="{% static 'icons/favicon.svg' %}" type="image/svg+xml" />
+<link rel="icon" type="image/png" sizes="32x32" href="{% static 'icons/favicon-32x32.png' %}" />
+<link rel="apple-touch-icon" href="{% static 'icons/apple-touch-icon.png' %}" />
+
+<!-- styles and scripts -->
+<link rel="stylesheet" href="{% static 'styles/style.css' %}" />
+<script src="{% static 'js/server.js' %}" defer></script>
+<script src="{% static 'js/main.js' %}" defer></script>
+
+<!-- Language and locale -->
+<meta name="language" content="{{}}" />
+<meta property="og:url" content="{{request.build_absolute_uri}}" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:site_name" content="" />
