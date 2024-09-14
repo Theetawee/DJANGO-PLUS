@@ -5,16 +5,16 @@
         <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=7" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        {{head}}
+        <c-base.head />
+        {{head}} {% if dark_mode %}
         <c-base.mode_switcher />
+        {% endif %}
         <c-base.pwa />
-        </head>
+    </head>
     <body class="bg-white dark:bg-gray-900">
         <c-base.messages />
 
         <main class="min-h-screen">{{slot}}</main>
-        <c-base.mode-btn />
         <c-base.footer />
-        <c-base.mode-script />
     </body>
 </html>
