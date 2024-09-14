@@ -1,6 +1,5 @@
 from base.settings.base import *
 
-
 DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
@@ -29,3 +28,5 @@ INTERNAL_IPS = [
 ]
 
 BACKUP_DIRECTORY = os.path.join(BASE_DIR, "backups/development")
+SECURE_SSL_REDIRECT = False
+CSRF_COOKIE_SECURE = False
