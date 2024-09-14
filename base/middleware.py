@@ -12,7 +12,6 @@ class AdminAccessMiddleware:
     def __call__(self, request):
         if not settings.IS_ADMIN_ENABLED:
             admin_url = settings.ADMIN_SITE_URL_PATH
-            print(admin_url)
 
             # Check if the current URL matches the admin URL
             if request.path.startswith(admin_url):
