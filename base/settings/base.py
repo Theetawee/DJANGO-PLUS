@@ -1,12 +1,7 @@
 import os
 from pathlib import Path
 
-"""
-from django.core.management.utils import get_random_secret_key
-
-SECRET_KEY = get_random_secret_key()
-"""
-
+from base.settings.app_settings import *
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
@@ -32,7 +27,6 @@ INSTALLED_APPS = [
     "debug_toolbar",
     "django_htmx",
     "accounts",
-    "cloudinary_storage",
     "cloudinary",
     "maintenance_mode",
     "django_cotton",
@@ -49,6 +43,8 @@ MIDDLEWARE = [
     "debug_toolbar.middleware.DebugToolbarMiddleware",
     "django_htmx.middleware.HtmxMiddleware",
     "maintenance_mode.middleware.MaintenanceModeMiddleware",
+    "base.middleware.MinifyHTMLMiddleware",
+    "base.middleware.AdminAccessMiddleware",
 ]
 
 ROOT_URLCONF = "base.urls"

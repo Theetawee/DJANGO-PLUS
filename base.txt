@@ -1,6 +1,5 @@
 cloudinary
 Django
-django-cloudinary-storage
 django-debug-toolbar
 django-dotenv
 django-htmx
