@@ -129,9 +129,7 @@ EMAIL_USE_TLS = True
 MAINTENANCE_MODE = os.environ.get("MAINTENANCE_MODE", "False").lower() == "true"
 MAINTENANCE_MODE_TEMPLATE = "base/maintenance.html"
 
+SESSION_COOKIE_NAME = "__waanverse"
 
-COTTON_DIR = "components"
-COTTON_DIR = "components"
-COTTON_DIR = "components"
-COTTON_DIR = "components"
+
 COTTON_DIR = "components"
