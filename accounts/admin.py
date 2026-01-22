@@ -1,15 +1,65 @@
 from django.contrib import admin
-from .models import Account
 from django.contrib.auth.admin import UserAdmin
-# Register your models here.
+from .models import Account
 
 
 class AccountAdmin(UserAdmin):
-    list_display=('email','is_active','is_staff','name','username','last_login','date_joined')
-    search_fields=('email','name','username')
-    readonly_fields=('last_login','date_joined')
-    filter_horizontal=()
-    list_filter=()
-    fieldsets=()
+    # add_form = AccountCreationForm
 
-admin.site.register(Account,AccountAdmin)
+    list_display = (
+        "username",
+        "email_address",
+        "is_active",
+    )
+    list_filter = ("is_active",)
+    search_fields = (
+        "username",
+        "email_address",
+    )
+    readonly_fields = ("last_login", "date_joined")
+    ordering = ("-date_joined",)
+
+    fieldsets = (
+        (
+            None,
+            {
+                "fields": (
+                    "name",
+                    "username",
+                    "email_address",
+                    "password",
+                )
+            },
+        ),
+        (
+            "Permissions",
+            {
+                "fields": (
+                    "is_active",
+                    "is_staff",
+                    "is_superuser",
+                    "groups",
+                    "user_permissions",
+                )
+            },
+        ),
+        ("Important dates", {"fields": ("last_login", "date_joined")}),
+    )
+
+    add_fieldsets = (
+        (
+            None,
+            {
+                "classes": ("wide",),
+                "fields": (
+                    "username",
+                    "email_address",
+                    "password1",
+                    "password2",
+                ),
+            },
+        ),
+    )
+
+
+admin.site.register(Account, AccountAdmin)
